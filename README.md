@@ -13,7 +13,7 @@ To use TorchSFO, you should first import TorchSFO,
 `from sfo_pytorch import TorchSFO`  
 then initialize it,    
 `optimizer = TorchSFO(model.parameters(), (data, target), batch_size)`    
-then call the optimizer with a closure of the form
+then call the optimizer with a closure of the form:
 
 ```python
 def closure(x, y_):
@@ -23,7 +23,8 @@ def closure(x, y_):
         return loss
 
 SFO_opt.step(closure)
-```.
+```
+
 
 The three required initialization parameters are:    
 - *params* - Iterable of parameters to optimize.
