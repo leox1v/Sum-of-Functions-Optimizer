@@ -15,13 +15,15 @@ then initialize it,
 `optimizer = TorchSFO(model.parameters(), (data, target), batch_size)`    
 then call the optimizer with a closure of the form
 
-`    def closure(x, y_):
+```python
+def closure(x, y_):
         f = model.forward(x)
         loss = F.nll_loss(f, y_)
         loss.backward()
         return loss
 
-    SFO_opt.step(closure)`.
+SFO_opt.step(closure)
+```.
 
 The three required initialization parameters are:    
 - *params* - Iterable of parameters to optimize.
